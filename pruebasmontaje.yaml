@@ -3,8 +3,8 @@
   hosts: all
   become: true
   tasks:
-- name: Descargar archivo desde el servidor
-  fetch:
-    src: "{{ copiar_origen }}"
-    dest: "{{ copiar_destino }}"
-    flat: yes
+    - name: Descargar archivo desde el servidor
+      fetch:
+        src: "{{ copiar_origen }}"
+        dest: "{{ copiar_destino }}"
+        flat: yes
