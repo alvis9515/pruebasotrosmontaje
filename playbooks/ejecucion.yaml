@@ -1,5 +1,5 @@
 - name: Ejecucion de script
-  hosts: "{{item.server}}"
+  hosts: "{{server}}"
   become: true
   tasks:
     - name: Ejecucion de script
