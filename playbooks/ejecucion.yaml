@@ -1,0 +1,9 @@
+- name: Ejecucion de script
+  hosts: "{{ServerOracle}}"
+  become: true
+  tasks:
+    - name: Ejecucion de script
+      include_role:
+        name: roles/EjecucionS
+  become_method: su 
+  become_user: guate
