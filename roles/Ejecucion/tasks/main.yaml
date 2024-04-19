@@ -1,0 +1,12 @@
+---
+- name: Ejecutar script SQL usando SQL*Plus
+  shell: $ORACLE_HOME/bin/sqlplus -S {{ oracle_user }}/{{ oracle_password }}@localhost:{{ oracle_port }}/{{ oracle_database }} @{{ script_sql_path }}
+  environment: 
+    ORACLE_HOME: "{{ variable_home }}"
+    LD_LIBRARY_PATH: "{{ ld_path }}"
+    PATH: "{{ path_bin }}"
+  register: sqlplus_output
+  
+- name: Mostrar salida de SQL*Plus
+  debug:
+    var: sqlplus_output.stdout_lines
